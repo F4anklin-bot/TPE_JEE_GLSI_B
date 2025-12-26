@@ -1,0 +1,124 @@
+{
+  "description": "Données de test pour Postman - Création de clients et comptes",
+  "baseUrl": "http://localhost:8080/api",
+  
+  "clients": [
+    {
+      "nom": "Dupont",
+      "prenom": "Jean",
+      "dateNaissance": "1985-03-15",
+      "sexe": "M",
+      "courriel": "jean.dupont@email.com",
+      "adresse": "123 Rue de la République, 75001 Paris, France",
+      "numTelephone": "+33612345678",
+      "nationalite": "Française"
+    },
+    {
+      "nom": "Martin",
+      "prenom": "Marie",
+      "dateNaissance": "1990-07-22",
+      "sexe": "F",
+      "courriel": "marie.martin@email.com",
+      "adresse": "45 Avenue des Champs-Élysées, 75008 Paris, France",
+      "numTelephone": "+33623456789",
+      "nationalite": "Française"
+    },
+    {
+      "nom": "Bernard",
+      "prenom": "Pierre",
+      "dateNaissance": "1978-11-08",
+      "sexe": "M",
+      "courriel": "pierre.bernard@email.com",
+      "adresse": "78 Boulevard Saint-Germain, 75006 Paris, France",
+      "numTelephone": "+33634567890",
+      "nationalite": "Française"
+    }
+  ],
+  
+  "comptes": [
+    {
+      "numCompte": "FR7612345678901234567890123",
+      "typeCompte": "COURANT",
+      "solde": 2500.50,
+      "clientId": 1,
+      "note": "Compte courant pour Jean Dupont - À créer après le client ID 1"
+    },
+    {
+      "numCompte": "FR7698765432109876543210987",
+      "typeCompte": "EPARGNE",
+      "solde": 15000.00,
+      "clientId": 1,
+      "note": "Compte épargne pour Jean Dupont - À créer après le client ID 1"
+    },
+    {
+      "numCompte": "FR7655511222333444555666777",
+      "typeCompte": "COURANT",
+      "solde": 3200.75,
+      "clientId": 2,
+      "note": "Compte courant pour Marie Martin - À créer après le client ID 2"
+    },
+    {
+      "numCompte": "FR7688877766655544433322211",
+      "typeCompte": "EPARGNE",
+      "solde": 25000.00,
+      "clientId": 2,
+      "note": "Compte épargne pour Marie Martin - À créer après le client ID 2"
+    },
+    {
+      "numCompte": "FR7611122233344455566677788",
+      "typeCompte": "COURANT",
+      "solde": 5000.25,
+      "clientId": 3,
+      "note": "Compte courant pour Pierre Bernard - À créer après le client ID 3"
+    },
+    {
+      "numCompte": "FR7699988877766655544433322",
+      "typeCompte": "EPARGNE",
+      "solde": 35000.50,
+      "clientId": 3,
+      "note": "Compte épargne pour Pierre Bernard - À créer après le client ID 3"
+    }
+  ],
+  
+  "instructions": {
+    "etape1": "Créer les 3 clients en utilisant POST /api/clients avec les données du tableau 'clients'",
+    "etape2": "Noter les IDs retournés pour chaque client créé",
+    "etape3": "Mettre à jour les 'clientId' dans le tableau 'comptes' avec les IDs réels retournés",
+    "etape4": "Créer les 6 comptes en utilisant POST /api/comptes avec les données du tableau 'comptes' (sans le champ 'note')"
+  },
+  
+  "exemples_requetes_postman": {
+    "creer_client_1": {
+      "method": "POST",
+      "url": "http://localhost:8080/api/clients",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "nom": "Dupont",
+        "prenom": "Jean",
+        "dateNaissance": "1985-03-15",
+        "sexe": "M",
+        "courriel": "jean.dupont@email.com",
+        "adresse": "123 Rue de la République, 75001 Paris, France",
+        "numTelephone": "+33612345678",
+        "nationalite": "Française"
+      }
+    },
+    "creer_compte_1": {
+      "method": "POST",
+      "url": "http://localhost:8080/api/comptes",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "numCompte": "FR7612345678901234567890123",
+        "typeCompte": "COURANT",
+        "solde": 2500.50,
+        "clientId": 1
+      },
+      "note": "Remplacer clientId par l'ID réel retourné lors de la création du client"
+    }
+  }
+}
+
